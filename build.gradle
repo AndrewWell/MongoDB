@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.14'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.mongodb', name: 'mongodb-driver', version: '3.12.14'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
