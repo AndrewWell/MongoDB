@@ -92,7 +92,7 @@ class PostgreDB {
     void dropTable() {
         try (Connection connection = DriverManager.getConnection(connectString, username, password)) {
             Statement statement = connection.createStatement()
-            statement.executeUpdate("DROP TABLE IF EXISTS" + this.tableName)
+            statement.executeUpdate("DROP TABLE IF EXISTS " + this.tableName)
         }
         catch (SQLException e) {
             println("SQL State: %s\n%s", e.getSQLState(), e.getMessage())
