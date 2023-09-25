@@ -16,7 +16,10 @@ public class WorkingWithFiles {
     }
 
     private void addToList(String line) {
-        this.arrayList.add(index, line);
+        if (splitLine(line)[3].length() != 4)
+            System.out.println("[Warning] Line: '" + line + "' was`t included in the " +
+                    "program code because it dos`t meet the hyphenation criteria");
+        this.arrayList.add(index, line.replace("\'", "\""));
         index++;
     }
 
@@ -39,5 +42,10 @@ public class WorkingWithFiles {
 
     public ArrayList<String> getArrayList() {
         return arrayList;
+    }
+
+    private String[] splitLine(String line) {
+        String[] parts = line.split(";");
+        return parts;
     }
 }
